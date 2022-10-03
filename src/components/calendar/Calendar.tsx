@@ -16,7 +16,7 @@ const generateDates = (date: number) => {
 
 const generateWeeks = (dates: Array<Date>) => {
   const daysInWeek = 7;
-  let result = []; // there may be a better name for this!
+  let result = [];
 
   for (let i = 0; i < dates.length; i += daysInWeek) {
     result.push(dates.slice(i, i + daysInWeek));
