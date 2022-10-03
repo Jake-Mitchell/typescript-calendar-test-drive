@@ -1,18 +1,9 @@
+import { MouseEvent, useState } from "react";
 import { Date, Weekday } from "../../../types";
 import { Weekdays } from "../../configs/Weekdays";
 import { monthDates } from "../../configs/Monthdays";
 import s from "./Calendar.module.css";
 import { ChevronLeftIcon, ChevronRightIcon } from "../../assets/icons";
-
-const generateDates = (date: number) => {
-  for (let i = 0; i < 7; i++) {
-    return (
-      <button className={s.date} value={date}>
-        <p className={`${s.day} ${date === 18 ? s.today : ""}`}>{date}</p>
-      </button>
-    );
-  }
-};
 
 const generateWeeks = (dates: Array<Date>) => {
   const daysInWeek = 7;
@@ -26,6 +17,29 @@ const generateWeeks = (dates: Array<Date>) => {
 };
 
 export const Calendar: React.FC<{}> = ({}) => {
+  const [selectedDate, setSelectedDate] = useState<string | null>(null);
+
+  const handleSelectDate = (e: MouseEvent<HTMLButtonElement>) => {
+    setSelectedDate(e.currentTarget.getAttribute("value"));
+  };
+
+  const generateDates = (date: number) => {
+    let selectedDateInt: number = selectedDate ? parseInt(selectedDate) : 0;
+    for (let i = 0; i < 7; i++) {
+      return (
+        <button className={s.date} value={date} onClick={handleSelectDate}>
+          <p
+            className={`${s.day} ${date === 18 ? s.today : ""} ${
+              date === selectedDateInt ? s.selected : ""
+            }`}
+          >
+            {date}
+          </p>
+        </button>
+      );
+    }
+  };
+
   return (
     <div className={s.container}>
       <div className={s.datePickerContainer}>

@@ -9,26 +9,24 @@
 }
 
 .datePickerContainer {
+  align-items: center;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  /* background: white; */
   flex-grow: 1;
+  justify-content: space-between;
   width: 100%;
 }
 
 .calendar {
-  /* margin: auto; */
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
 .weekdaysContainer {
   display: flex;
-  justify-content: space-around;
   flex-grow: 1;
+  justify-content: space-around;
 }
 
 .weekday {
@@ -37,18 +35,18 @@
 
 .date {
   cursor: pointer;
-  min-width: 40px;
   flex-grow: 1;
+  min-width: 40px;
   padding: 0;
 }
 
 .week {
-  display: inline-flex;
   align-items: flex-start;
+  background-color: white;
+  display: inline-flex;
+  height: 100%;
   justify-content: space-between;
   width: 100%;
-  height: 100%;
-  background-color: white;
 }
 
 .day {
@@ -65,26 +63,26 @@ button {
 button:hover {
   background-color: rgb(240, 240, 240);
   background-color: #fd6cbb;
-  color: white;
   border-radius: 5px;
+  color: white;
   filter: drop-shadow(2px 2px 2px #fd6cbb);
 }
 
 svg {
-  border-radius: 100px;
   background: #e8e8e8;
+  border-radius: 100px;
   padding: 10px;
 }
 
 .today {
-  /* background-color: #fd6cbb;
-  color: white;
-  border-radius: 5px;
-  filter: drop-shadow(2px 2px 2px #fd6cbb); */
   color: #fd6cbb;
   font-weight: bolder;
 }
 
 .today:hover {
   color: white;
+}
+
+.selected {
+  text-decoration: underline;
 }
