@@ -1,0 +1,9 @@
+.datePickerContainer {
+  background-color: red;
+}
+
+.backgroundContainer {
+  background-image: linear-gradient(#fdb298, #b176fe);
+  width: 100%;
+  height: 500px;
+}
