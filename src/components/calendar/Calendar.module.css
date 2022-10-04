@@ -69,9 +69,12 @@ button:hover {
 }
 
 svg {
-  background: #e8e8e8;
   border-radius: 100px;
   padding: 10px;
+}
+
+svg:hover {
+  background: #e8e8e8;
 }
 
 .today {
